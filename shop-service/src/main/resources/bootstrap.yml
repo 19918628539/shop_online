@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      #与gitee仓库中的配置文件的application保持一致
+      name: shop
+      #与gitee仓库中的配置文件的profile保持一致
+      profile: dev
+      #要与仓库中的配置文件所属版本（分支）一样
+      label: master
+      discovery:
+        #使用配置中心
+        enabled: true
+        #配置中心在服务注册的服务名
+        service-id: config-server
+  rabbitmq:
+    port: 5672
+    username: guest
+    password: guest
+    addresses: 192.168.193.130
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  # 配置rabbitmq信息，如果与默认值一样就不用配置

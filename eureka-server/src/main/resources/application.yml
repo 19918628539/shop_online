@@ -1,0 +1,35 @@
+server:
+  port: ${port:10086}
+spring:
+  application:
+    name: eureka-server
+  redis:
+    #    数据库索引，默认为0
+    database: 0
+    #    redis host ip
+    host: 127.0.0.1
+    #    redis  连接端口
+    port: 6379
+    #    服务器连接密码（默认为空）
+    password:
+    #    连接超时时间（毫秒）
+    timeout: 1000
+  #设置springsession存储类型，默认为redis
+  session:
+    store-type: redis
+
+eureka:
+  client:
+    service-url:
+      #eureka服务地址，如果是集群的话需要指定其他集群eureka地址
+      #http://127.0.0.1:10086/eureka,http://127.0.0.1:10087/eureka,http://127.0.0.1:10088/eureka,http://127.0.0.1:10089/eureka
+      defaultZone: http://127.0.0.1:10086/eureka
+      #非集群下不注册自己
+    register-with-eureka: false
+    #拉取服务
+    fetch-registry: false
+  server:
+    #服务失效剔除时间间隔，默认60秒
+    eviction-interval-timer-in-ms: 60000
+    #关闭自我保护机制
+    enable-self-preservation: false

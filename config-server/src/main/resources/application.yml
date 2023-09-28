@@ -1,0 +1,40 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: config-server
+  redis:
+    #    数据库索引，默认为0
+    database: 0
+    #    redis host ip
+    host: 127.0.0.1
+    #    redis  连接端口
+    port: 6379
+    #    服务器连接密码（默认为空）
+    password:
+    #    连接超时时间（毫秒）
+    timeout: 1000
+  #设置springsession存储类型，默认为redis
+  session:
+    store-type: redis
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/loviviltd/springcloud-config.git
+  #配置rabbitmq信息，如果与默认值一样就不用配置
+  rabbitmq:
+    username: guest
+    password: guest
+    addresses: 192.168.193.130
+    port: 5672
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        #暴露触发消息总线的地址
+        include: bus-refresh
