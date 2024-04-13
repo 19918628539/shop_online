@@ -11,11 +11,11 @@ import java.io.InputStream;
 @Service("aliyunOss")
 public class FileServiceByAliyunImpl implements FileService {
 
-  public final static String endpoint="oss-cn-guangzhou.aliyuncs.com";
-  public final static String accessKeyId="LTAI5t8Aw69T9GbAfmLBYzTG";
-  public final static String accessKeySecret="pWGcrF3kq53NIRb5D2oCkEDUEo8KA4";
-  public final static String bucket="stockings";
-  public final static String url_pre="stockings.oss-cn-guangzhou.aliyuncs.com/";
+  public final static String endpoint="";
+  public final static String accessKeyId="";
+  public final static String accessKeySecret="";
+  public final static String bucket="";
+  public final static String url_pre="";
 
 
 
